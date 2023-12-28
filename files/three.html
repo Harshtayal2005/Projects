@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            height: 100vw;
+            width: 100vw;
+            background-color: beige;
+            border: 5px solid black;
+            box-sizing: border-box;
+        }
+        .box{
+            width: 200px;
+            height: 100px;
+            background-color: blue;
+            border-radius: 10px;
+            margin: 10px;
+            border: 2px solid yellow;
+            position: relative;
+            /* animation-name: rightMovement;
+            animation-duration: 4s;
+            animation-iteration-count: 1; */
+            /* animation-delay: 1s; */
+            /* animation-timing-function: linear; */
+            /* animation-timing-function: ease-in; */
+            /* animation-timing-function: ease-out; */
+            /* animation-timing-function: cubic-bezier(1,-0.4, 1, 1); */
+            /* animation-direction: alternate-reverse; */
+            /* animation-fill-mode: both; */
+            animation: 4s linear 1s infinite alternate none running rightMovement;
+        }
+        @keyframes rightMovement {
+            from{
+                top: 0;
+                left: 0;
+            }
+
+            to{
+                top: 0;
+                left: 1200px
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+
+        </div>
+    </div>
+</body>
+</html>

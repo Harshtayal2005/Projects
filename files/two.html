@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: antiquewhite;
+            height: 650px;
+            border: 2px solid black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            background-color: aqua;
+            --x: black;
+            height: 550px;
+            width: 250px;
+            border: 1px solid red;
+            /* box-shadow: inset 10px 10px 10px 10px black; */
+            box-shadow: 10px 10px var(--x);
+        }
+        img{
+            margin: 10px;
+        }
+        h2{
+            margin: 10px;
+        }
+        p{
+            margin: 10px;
+        }
+        #head1{
+            color: red;
+            /* text-shadow: 10px 10px, 20px 20px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <img src="/Extra/motivation.jpeg" alt="motivational pic">
+            <h2 id="head1">Welcome to my site of motivation</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos dignissimos, 
+                sed omnis qui vitae vero delectus eligendi officiis facilis recusandae non,
+                 nostrum modi maiores repellendus. Tempora necessitatibus assumenda quis ad!</p>
+        </div>
+    </div>
+    hola
+</body>
+</html>
