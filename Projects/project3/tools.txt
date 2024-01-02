@@ -1,0 +1,7 @@
+Tools used:
+
+1) "cssgradient.io" website
+2) CHATGPT "web development" tab
+3) mdn documentation
+4) w3s schools documentation
+5) 
