@@ -12,7 +12,7 @@
     padding: 30px;
     /* row-gap: 1rem;
     column-gap: 1rem; */
-    gap: 1rem;
+    gap: 1rem; /* for both left and right */
     /* grid-template-rows: 1fr 1fr; */
     grid-template-rows: repeat(6, 1fr);
     /* grid-template-columns: 1fr 1fr 2fr; */
