@@ -1,4 +1,4 @@
-# This is Harsh Tayal's projects
+# Below are some basic projects I have made with the learning of HTML and CSS
 - basic resume project
 - media project
 - recipe site
