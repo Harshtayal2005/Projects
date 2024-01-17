@@ -1,7 +1,0 @@
-Tools used
-1) "cssgradient.io" website for different background gradients
-2) CHATGPT "web development" tab
-3) mdn documentation
-4) w3s schools documentation
-5) Css tricks website 
-6) material design shadow css
