@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.main_heading_container{
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(9, 9, 53);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.images_container{
+    display: flex;
+    height: 17rem;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.hand_image_container{
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    position: relative;
+}
+
+.hand_image_container:hover{
+    border: 8px solid black;
+    cursor: pointer;
+}
+
+.hand_image{
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+}
+
+.score_container{
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    height: 10rem;
+}
+
+.player_score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comp_score{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player_score_number{
+    font-size: 4rem;
+}
+.comp_score_number{
+    font-size: 4rem;
+}
+
+.player_name{
+    font-size: 2rem;
+}
+
+.result_container{
+    display: flex;
+    justify-content: center;
+}
+
+#results{
+    display: inline;
+    background-color: rgb(33, 31, 31);
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7rem;
+    border-radius: 15px;
+    padding: 1rem;
+}

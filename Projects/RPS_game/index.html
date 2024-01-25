@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header>
+            <div class="main_heading_container">
+                <h1>Rock Paper Scissors</h1>
+            </div>
+        </header>
+
+        <main>
+            <div class="images_container">
+                <div class="hand_image_container" id="rock">
+                    <img src="/Projects/RPS_game/rock.jpeg" alt="rock image" class="hand_image">
+                </div>
+
+                <div class="hand_image_container" id="paper">
+                    <img src="/Projects/RPS_game/paper.jpeg" alt="paper image" class="hand_image">
+                </div>
+                <div class="hand_image_container" id="scissor">
+                    <img src="/Projects/RPS_game/scissor.jpeg" alt="scissor image" class="hand_image">
+                </div>
+            </div>
+
+            <div class="score_container">
+                <div class="player_score">
+                    <span class="player_score_number">0</span>
+                    <span class="player_name">You</span>
+                </div>
+                <div class="comp_score">
+                    <span class="comp_score_number">0</span>
+                    <span class="player_name">Comp</span>
+                </div>
+            </div>
+
+            <div class="result_container">
+                <h2 id="results">Play your move!</h2>
+            </div>
+        </main>
+    </div>
+<script src="script.js"></script>
+</body>
+</html>
