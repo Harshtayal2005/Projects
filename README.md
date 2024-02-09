@@ -1,4 +1,4 @@
-# Below are some basic projects I have made with the learning of HTML, CSS, and JavaScript
+# Presented below are a selection of foundational projects crafted using the fundamentals of HTML, CSS, and JavaScript.
 - [Zomato clone](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Zomato_clone)
 - [Blog site](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Blog_site)
 - [Currency-convertor](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Currency_convertor)
