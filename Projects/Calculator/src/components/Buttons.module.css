@@ -1,0 +1,13 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 75%;
+  width: 80%;
+}
+
+.btn {
+  width: 4.2rem;
+  height: 4.2rem;
+  margin: 0.3rem;
+}
