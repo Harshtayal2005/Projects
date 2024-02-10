@@ -1,6 +1,6 @@
 # Presented below are a selection of foundational projects crafted using the fundamentals of HTML, CSS, JavaScript and React.
 
-HTML + CSS : 
+#HTML + CSS : 
 - [Zomato clone](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Zomato_clone)
 - [Blog site](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Blog_site)
 - [Cards](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Cards)
