@@ -7,14 +7,16 @@
 - [recipe site](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Recipe_site)
 - [basic resume project](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Basic_resume)
 - [media project](https://github.com/Harshtayal2005/Projects/tree/main/Projects/media)
+## 
 
 ## HTML + CSS + JS :
 - [Currency-convertor](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Currency_convertor)
 - [Rock-paper-scissors-game](https://github.com/Harshtayal2005/Projects/tree/main/Projects/RPS_game)
+## 
 
 ## React : 
 - [Calculator](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Calculator)
-
+## 
 
 
 
