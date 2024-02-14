@@ -8,6 +8,7 @@ function TakeInput({ onNewItem }) {
   const handleNameChange = (evt) => {
     setTodoNameChange(evt.target.value);
   };
+
   const handleDateChange = (evt) => {
     setTodoDateChange(evt.target.value);
   };
@@ -18,17 +19,9 @@ function TakeInput({ onNewItem }) {
     setTodoDateChange("");
   };
 
-  const handleKeyDown = ({ key }) => {
-    if (key === "Enter") {
-      onNewItem(todoNameChange, todoDateChange);
-      setTodoNameChange("");
-      setTodoDateChange("");
-    }
-  };
-
-  const handleKeyDown2 = (evt) => {
-    evt.preventDefault();
+  const handleKeyDown = (evt) => {
     if (evt.key === "Enter") {
+      evt.preventDefault();
       onNewItem(todoNameChange, todoDateChange);
       setTodoNameChange("");
       setTodoDateChange("");
@@ -38,7 +31,7 @@ function TakeInput({ onNewItem }) {
   return (
     <div className="grid grid-cols-6 gap-4 px-5 my-4">
       <input
-        className="col-span-3 outline-none border border-gray-400 rounded-md px-2 h-[3rem] font-serif"
+        className="col-span-3 outline-none border border-gray-400 rounded-md px-2 h-[3rem] font-serif text-[1.1rem]"
         type="text"
         placeholder="Enter Todo here"
         value={todoNameChange}
@@ -46,11 +39,11 @@ function TakeInput({ onNewItem }) {
         onKeyDown={handleKeyDown}
       />
       <input
-        className="col-span-2 border border-gray-400 rounded-md px-2 h-[3rem] font-serif "
+        className="col-span-2 border border-gray-400 rounded-md px-2 h-[3rem] font-serif text-[1.1rem]"
         type="date"
         value={todoDateChange}
         onChange={handleDateChange}
-        onKeyDown={handleKeyDown2}
+        onKeyDown={handleKeyDown}
       />
       <Button
         className="col-span-1 bg-green-800 h-[3rem]"
