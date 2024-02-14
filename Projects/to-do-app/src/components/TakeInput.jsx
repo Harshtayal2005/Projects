@@ -21,6 +21,8 @@ function TakeInput({ onNewItem }) {
   const handleKeyDown = ({ key }) => {
     if (key === "Enter") {
       onNewItem(todoNameChange, todoDateChange);
+      setTodoNameChange("");
+      setTodoDateChange("");
     }
   };
 
@@ -28,6 +30,8 @@ function TakeInput({ onNewItem }) {
     evt.preventDefault();
     if (evt.key === "Enter") {
       onNewItem(todoNameChange, todoDateChange);
+      setTodoNameChange("");
+      setTodoDateChange("");
     }
   };
 
