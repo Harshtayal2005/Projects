@@ -15,8 +15,8 @@
 ## 
 
 ## React : 
-- [Calculator](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Calculator)
 - [Todo app](https://github.com/Harshtayal2005/Projects/tree/main/Projects/to-do-app)
+- [Calculator](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Calculator)
 ## 
 
 
