@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+// import { MdDeleteForever } from "react-icons/md";
 
 function Item({ items, deleteItem }) {
   return (
@@ -16,6 +17,7 @@ function Item({ items, deleteItem }) {
         onClick={() => deleteItem(items.name)}
       >
         Delete
+        {/* <MdDeleteForever/> */}
       </Button>
     </>
   );
