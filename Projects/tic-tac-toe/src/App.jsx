@@ -12,6 +12,15 @@ function App() {
   const [currVal, setCurrVal] = useState(["", "", "", "", "", "", "", "", ""]);
   const [result, setResult] = useState("");
 
+  const handleReset = () => {
+    setGameCompleted(0);
+    setNumbers([0, 1, 2, 3, 4, 5, 6, 7, 8]);
+    setBoard(["", "", "", "", "", "", "", "", ""]);
+    setCurrVal(["", "", "", "", "", "", "", "", ""]);
+    setYourScore(0);
+    setCompScore(0);
+  };
+
   const handleClickEvent = (evt) => {
     if (gameCompleted) {
       alert("Game Completed");
@@ -19,6 +28,101 @@ function App() {
     }
 
     let newBoard = [...board];
+
+    const checkPlayer = (x, y, z) => {
+      let newCurrVal = [...currVal];
+      newCurrVal[x] = "G";
+      newCurrVal[y] = "G";
+      newCurrVal[z] = "G";
+      setYourScore(yourScore + 1);
+      setGameCompleted(1);
+      setCurrVal(newCurrVal);
+      setResult("W");
+      return;
+    };
+
+    const checkComp = (x, y, z) => {
+      let newCurrVal = [...currVal];
+      newCurrVal[x] = "R";
+      newCurrVal[y] = "R";
+      newCurrVal[z] = "R";
+      setCompScore(compScore + 1);
+      setGameCompleted(1);
+      setCurrVal(newCurrVal);
+      setResult("L");
+      return;
+    };
+
+    const checkForBoth = () => {
+      for (let i = 0; i < 9; i += 3) {
+        if (
+          newBoard[i] == "X" &&
+          newBoard[i + 1] == "X" &&
+          newBoard[i + 2] == "X"
+        ) {
+          checkPlayer(i, i + 1, i + 2);
+          return 1;
+        } else if (
+          newBoard[i] == "O" &&
+          newBoard[i + 1] == "O" &&
+          newBoard[i + 2] == "O"
+        ) {
+          checkComp(i, i + 1, i + 2);
+          return 1;
+        }
+      }
+      for (let i = 0; i < 3; i++) {
+        if (
+          newBoard[i] == "X" &&
+          newBoard[i + 3] == "X" &&
+          newBoard[i + 6] == "X"
+        ) {
+          checkPlayer(i, i + 3, i + 6);
+          return 1;
+        } else if (
+          newBoard[i] == "O" &&
+          newBoard[i + 3] == "O" &&
+          newBoard[i + 6] == "O"
+        ) {
+          checkComp(i, i + 3, i + 6);
+          return 1;
+        }
+      }
+      if (newBoard[0] == "X" && newBoard[4] == "X" && newBoard[8] == "X") {
+        checkPlayer(0, 4, 8);
+        return 1;
+      } else if (
+        newBoard[0] == "O" &&
+        newBoard[4] == "O" &&
+        newBoard[8] == "O"
+      ) {
+        checkComp(0, 4, 8);
+        return 1;
+      }
+      if (newBoard[2] == "X" && newBoard[4] == "X" && newBoard[6] == "X") {
+        checkPlayer(2, 4, 6);
+        return 1;
+      } else if (
+        newBoard[2] == "O" &&
+        newBoard[4] == "O" &&
+        newBoard[6] == "O"
+      ) {
+        checkComp(2, 4, 6);
+        return 1;
+      }
+    };
+
+    const checkDraw = (arr) => {
+      if (arr.length == 0) {
+        let newCurrVal = ["D", "D", "D", "D", "D", "D", "D", "D", "D"];
+        setGameCompleted(1);
+        setCurrVal(newCurrVal);
+        setBoard([".", ".", ".", ".", ".", ".", ".", ".", "."]);
+        setResult("D");
+        return;
+      }
+    };
+
     //player turn
     let boxNo = evt.target.id;
     let flag = 0;
@@ -38,72 +142,14 @@ function App() {
     newBoard[boxNo] = "X";
     setBoard(newBoard);
 
-    //check win for player
+    //check win condition for player
 
-    for (let i = 0; i < 9; i += 3) {
-      if (
-        newBoard[i] == "X" &&
-        newBoard[i + 1] == "X" &&
-        newBoard[i + 2] == "X"
-      ) {
-        let newCurrVal = [...currVal];
-        newCurrVal[i] = "G";
-        newCurrVal[i + 1] = "G";
-        newCurrVal[i + 2] = "G";
-        setYourScore(yourScore + 1);
-        setGameCompleted(1);
-        setCurrVal(newCurrVal);
-        setResult("W");
-        return;
-      }
-    }
-    for (let i = 0; i < 3; i++) {
-      if (
-        newBoard[i] == "X" &&
-        newBoard[i + 3] == "X" &&
-        newBoard[i + 6] == "X"
-      ) {
-        let newCurrVal = [...currVal];
-        newCurrVal[i] = "G";
-        newCurrVal[i + 3] = "G";
-        newCurrVal[i + 6] = "G";
-        setYourScore(yourScore + 1);
-        setGameCompleted(1);
-        setCurrVal(newCurrVal);
-        setResult("W");
-        return;
-      }
-    }
-    if (newBoard[0] == "X" && newBoard[4] == "X" && newBoard[8] == "X") {
-      let newCurrVal = [...currVal];
-      newCurrVal[0] = "G";
-      newCurrVal[4] = "G";
-      newCurrVal[8] = "G";
-      setYourScore(yourScore + 1);
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setResult("W");
+    if(checkForBoth()) {
       return;
     }
-    if (newBoard[2] == "X" && newBoard[4] == "X" && newBoard[6] == "X") {
-      let newCurrVal = [...currVal];
-      newCurrVal[2] = "G";
-      newCurrVal[4] = "G";
-      newCurrVal[6] = "G";
-      setYourScore(yourScore + 1);
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setResult("W");
-      return;
-    }
-    if (newNumbers.length == 0) {
-      let newCurrVal = ["D", "D", "D", "D", "D", "D", "D", "D", "D"];
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setBoard([".", ".", ".", ".", ".", ".", ".", ".", "."]);
-      setResult("D");
-      return;
-    }
+
+    //check draw condition
+    checkDraw(newNumbers);
 
     //computer turn
     let compNo = newNumbers[Math.floor(Math.random() * newNumbers.length)];
@@ -113,82 +159,15 @@ function App() {
     newBoard[compNo] = "O";
     setBoard(newBoard);
 
-    //check win for computer
-    for (let i = 0; i < 9; i += 3) {
-      if (
-        newBoard[i] == "O" &&
-        newBoard[i + 1] == "O" &&
-        newBoard[i + 2] == "O"
-      ) {
-        let newCurrVal = [...currVal];
-        newCurrVal[i] = "R";
-        newCurrVal[i + 1] = "R";
-        newCurrVal[i + 2] = "R";
-        setCompScore(compScore + 1);
-        setGameCompleted(1);
-        setCurrVal(newCurrVal);
-        setResult("L");
-        return;
-      }
-    }
-    for (let i = 0; i < 3; i++) {
-      if (
-        newBoard[i] == "O" &&
-        newBoard[i + 3] == "O" &&
-        newBoard[i + 6] == "O"
-      ) {
-        let newCurrVal = [...currVal];
-        newCurrVal[i] = "R";
-        newCurrVal[i + 3] = "R";
-        newCurrVal[i + 6] = "R";
-        setCompScore(compScore + 1);
-        setGameCompleted(1);
-        setCurrVal(newCurrVal);
-        setResult("L");
-        return;
-      }
-    }
-    if (newBoard[0] == "O" && newBoard[4] == "O" && newBoard[8] == "O") {
-      let newCurrVal = [...currVal];
-      newCurrVal[0] = "R";
-      newCurrVal[4] = "R";
-      newCurrVal[8] = "R";
-      setCompScore(compScore + 1);
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setResult("L");
+    //check win condition for computer
+    if(checkForBoth()) {
       return;
     }
-    if (newBoard[2] == "O" && newBoard[4] == "O" && newBoard[6] == "O") {
-      let newCurrVal = [...currVal];
-      newCurrVal[2] = "R";
-      newCurrVal[4] = "R";
-      newCurrVal[6] = "R";
-      setCompScore(compScore + 1);
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setResult("L");
-      return;
-    }
-    if (newNumbers2.length == 0) {
-      let newCurrVal = ["D", "D", "D", "D", "D", "D", "D", "D", "D"];
-      setGameCompleted(1);
-      setCurrVal(newCurrVal);
-      setBoard([".", ".", ".", ".", ".", ".", ".", ".", "."]);
-      setResult("D");
-      return;
-    }
-    
-    setNumbers(newNumbers2);
-  };
 
-  const handleReset = () => {
-    setGameCompleted(0);
-    setNumbers([0, 1, 2, 3, 4, 5, 6, 7, 8]);
-    setBoard(["", "", "", "", "", "", "", "", ""]);
-    setCurrVal(["", "", "", "", "", "", "", "", ""]);
-    setYourScore(0);
-    setCompScore(0);
+    //check draw condition
+    checkDraw(newNumbers2);
+
+    setNumbers(newNumbers2);
   };
 
   return (
