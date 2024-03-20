@@ -16,6 +16,7 @@
 
 ## React : 
 - [Tic-Tac-Toe game](https://github.com/Harshtayal2005/Projects/tree/main/Projects/tic-tac-toe)
+- [Social media](https://github.com/Harshtayal2005/Projects/tree/main/Projects/social-media)
 - [Todo app](https://github.com/Harshtayal2005/Projects/tree/main/Projects/to-do-app)
 - [Calculator](https://github.com/Harshtayal2005/Projects/tree/main/Projects/Calculator)
 ## 
