@@ -22,7 +22,7 @@
 ## 
 
 ## MERN - basic:
--[Password manager] (https://password-manager-by-ht.netlify.app)
+-[Password manager](https://password-manager-by-ht.netlify.app)
 
 
 
